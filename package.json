@@ -1,0 +1,22 @@
+{
+  "name": "receita",
+  "version": "1.0.0",
+  "description": "software que informa nutrientes da receita",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w sqlite3"
+  },
+  "author": "Isaias",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^7.1.7",
+    "jQuery": "^1.7.4",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.2.11",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.8.8"
+  }
+}

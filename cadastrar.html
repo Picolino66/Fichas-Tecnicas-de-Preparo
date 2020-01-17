@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cadastrar Receita</title>
+    <meta charset="utf-8">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="renderer.js"></script>
+    <script src="autocomplete.js"></script>
+    <script src="duplicar.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="mt-5">Cadastrar Receita</h1>
+      </header>
+        <form action="" name="formulario" id="formulario">
+          <div class="form-group">
+            <input type="text" class="form-control" id="nome" placeholder="Nome">
+          </div>
+          <fieldset>
+            <div id="origem">
+              <div class="form-group">
+                <input type="text" class="form-control" id="ingrediente" name="ingrediente" placeholder="Ingredientes">
+                <script>
+                  var jsonData = require('./tabela.json');
+                  autocomplete(document.getElementById("ingrediente"), jsonData);
+                </script>
+              </div>
+              <div id="match-list"></div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="pesoBruto" name="pesoBruto" placeholder="Peso Bruto">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="pesoLiquido" name="pesoLiquido" placeholder="Peso Líquido">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="preco" name="preco" placeholder="Preço (1000g | 1000ml)">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end mr-1 mb-2">
+              <a data-id='1' href="#" class="btn btn-primary reset">Adicionar</a>
+            </div>
+            <div id="destino">
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <textarea class="form-control" rows="3" id="preparacao" placeholder="Preparação"></textarea>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="grau" placeholder="Grau de Dificuldade">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="tempo" placeholder="Tempo de Preparo">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="categoria" placeholder="Categoria">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="rendimento" placeholder="Rendimento em g">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="numeroPorcoes" placeholder="Nº de Porções">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" id="pesoPorcao" placeholder="Peso da Porção">
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-large btn-success" id="salvar">Salvar</button>
+          <button type="button" class="btn btn-large btn-danger" id="voltar">Voltar</button>
+        </form>
+    </div>
+  </body>
+</html>
