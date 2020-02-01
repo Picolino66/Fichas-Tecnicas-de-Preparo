@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Ficha Técnica De Preparo</title>
+        <!-- CSS - Tema Admin -->
+        <link href="../static/css/admin.css" rel="stylesheet">
+        <!-- CSS - Font Awesome -->
+        <link href="../static/css/all.css" rel="stylesheet" type="text/css">
+        <!-- CSS Data Tables-->
+        <link href="../static/css/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+        <!--JS Criado Para Tratamento dos Dados de Inserir-->
+        <script src="../controllers/index.js"></script>
+    </head>
+    <body id="page-top">
+        <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                  <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                  </div>
+                  <div class="sidebar-brand-text mx-3">FTP</div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Painel de Controle</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cadastrar_receita.html">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Cadastrar Receita</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ingredientes.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Ingredientes</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Tutoriais</span></a>
+                </li>
+                <hr class="sidebar-divider d-none d-md-block">
+                <div class="text-center d-none d-md-inline">
+                  <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+              </ul>
+              <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                  <div class="container-fluid mt-5">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                      <h1 class="h3 mb-0 text-gray-800">FTP</h1>
+                    </div>
+                    <div class="row">
+                      <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Receitas Cadastradas</div>
+                              </div>
+                              <div class="col-auto">
+                                <div id="receita-cadastrada" class="h3 mb-0 font-weight-bold text-gray-800"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Ingredientes USDA</div>
+                              </div>
+                              <div class="col-auto">
+                                <div class="h3 mb-0 font-weight-bold text-gray-800">0</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ingredientes TBCA</div>
+                              </div>
+                              <div class="col-auto">
+                                <div id="ingrediente-tbca" class="h3 mb-0 mr-3 font-weight-bold text-gray-800">5</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Ingredientes Usuário</div>
+                              </div>
+                              <div class="col-auto">
+                                <div class="h3 mb-0 font-weight-bold text-gray-800">0</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Receitas</h1>
+                    <div class="card shadow mb-4">
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table" id="receitaTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Grau</th>
+                                <th>Ação</th>
+                              </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Grau</th>
+                                <th>Ação</th>
+                              </tr>
+                          </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 mb-4">
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Sobre o Projeto</h6>
+                          </div>
+                          <div class="card-body">
+                            <p>DESCRIÇÃO AQUI</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Manual de Uso</h6>
+                          </div>
+                          <div class="card-body">
+                            <div class="text-center">
+                              <iframe width="560" height="315" src="https://www.youtube.com/embed/HhoATZ1Imtw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <footer class="sticky-footer bg-white">
+                  <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                      <span>Copyright &copy; Your Website 2019</span>
+                    </div>
+                  </div>
+                </footer>
+              </div>          
+        </div>
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ficha Técnica de Preparo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modalTexto">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- JS JQuery-->
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/jquery.easing.js"></script>
+        <!-- JS Boostrap -->
+        <script src="../static/js/bootstrap.bundle.js"></script>
+        <script src="../static/js/bootstrap.js"></script>
+        <!-- JS Tema Admin-->
+        <script src="../static/js/admin.js"></script>
+        <!-- JS DataTables-->
+        <script src="../static/js/jquery.dataTables.js"></script>
+        <script src="../static/js/dataTables.bootstrap4.js"></script>
+        <script src="../static/js/datatables-demo.js"></script>
+        
+    </body>
+</html>
