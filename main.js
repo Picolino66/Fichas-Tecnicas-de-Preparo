@@ -18,7 +18,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('views/index.html')
   //SQLITE
   //let server = require('./server/server.js')
   // Open the DevTools.

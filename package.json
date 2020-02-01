@@ -10,10 +10,12 @@
   "author": "Isaias",
   "license": "ISC",
   "dependencies": {
+    "@popperjs/core": "^2.0.0",
+    "bluebird": "^3.7.2",
     "electron": "^7.1.7",
-    "jQuery": "^1.7.4",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.2.11",
+    "node-pre-gyp": "^0.14.0",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
