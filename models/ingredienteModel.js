@@ -17,7 +17,6 @@ function createReceita(){
                 console.error(err.message);
             }else console.log('Criado Receita Com Sucesso!');
         });
-    db.close();
 }
 function ready(fn){
     if (document.readyState != 'loading'){
